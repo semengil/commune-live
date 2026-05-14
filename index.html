@@ -414,6 +414,158 @@ nav {
   font-size: 13px; color: rgba(255,255,255,0.5);
   margin-top: 16px;
 }
+/* CREATE COMMUNITY SECTION */
+
+.cta-founder-section {
+  position: relative;
+  overflow: hidden;
+  padding: 140px 40px;
+  text-align: center;
+
+  background:
+    radial-gradient(circle at top, rgba(255,255,255,0.06), transparent 40%),
+    linear-gradient(180deg, #1c2a24 0%, #111714 100%);
+}
+
+/* мягкое свечение */
+.cta-founder-section::before {
+  content: '';
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(196, 255, 214, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* декоративная сетка */
+.cta-founder-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+  pointer-events: none;
+}
+
+.cta-founder-section .cta-inner {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.cta-founder-section .cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 6vw, 72px);
+  line-height: 1;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  color: #fff;
+  margin-bottom: 28px;
+}
+
+.cta-founder-section .cta-title em {
+  font-style: italic;
+  color: #b7d8c3;
+}
+
+.cta-founder-section .cta-sub {
+  max-width: 620px;
+  margin: 0 auto 42px;
+
+  color: rgba(255,255,255,0.72);
+  font-size: 19px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* кнопка */
+.founder-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 18px 34px;
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,0.18);
+
+  color: #fff;
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 500;
+  font-family: var(--font-body);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* glow */
+.founder-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.18),
+      rgba(255,255,255,0.03)
+    );
+
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.founder-btn:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.28);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.25),
+    0 0 30px rgba(183,216,195,0.12);
+}
+
+.cta-founder-section .cta-note {
+  margin-top: 18px;
+
+  color: rgba(255,255,255,0.42);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+/* mobile */
+@media (max-width: 640px) {
+
+  .cta-founder-section {
+    padding: 110px 24px;
+  }
+
+  .cta-founder-section .cta-sub {
+    font-size: 17px;
+  }
+
+  .founder-btn {
+    width: 100%;
+    padding: 18px 24px;
+  }
+}
 
 /* FOOTER */
 footer {
@@ -466,23 +618,25 @@ footer {
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="hero-eyebrow">Новый способ жить вместе</div>
+  <div class="hero-eyebrow">Новый способ жить в эпоху ИИ</div>
   <h1 class="hero-title">
     Мир меняется.<br/>
-    <em>Живи</em> по-новому.
+   Меняйся и ты. <em>Живи</em> по-новому.
   </h1>
   <p class="hero-sub">
-    Платформа для тех кто хочет жить в сообществе единомышленников — творить, путешествовать и зарабатывать на своей жизни как на контенте.
+    Платформа для тех кто хочет жить в сообществе единомышленников — творить, путешествовать и зарабатывать на своей жизни.
   </p>
   <div class="hero-actions">
     <a href="#join" class="btn-primary">Хочу в коммуну →</a>
     <a href="#how" class="btn-secondary">Как это работает</a>
+    <a href="#founders" class="btn-primary">Создать свою коммуну →</a>
+    <a href="#how_create" class="btn-secondary">Как это работает</a>
   </div>
   <div class="hero-communes">
     <div class="commune-pill"><div class="dot"></div> Villa Verde · Испания</div>
     <div class="commune-pill"><div class="dot"></div> Arthaus · Бали</div>
     <div class="commune-pill"><div class="dot"></div> Casa Cucina · Тоскана</div>
-    <div class="commune-pill"><div class="dot"></div> Surf & Code · Тариф</div>
+    <div class="commune-pill"><div class="dot"></div> Surf & Code · Тенерифе</div>
     <div class="commune-pill"><div class="dot"></div> Бабушки у моря · Черногория</div>
   </div>
 </section>
@@ -495,9 +649,9 @@ footer {
       <h2 class="vision-title">Мир на пороге<br/><em>величайшего</em><br/>перелома</h2>
     </div>
     <div class="vision-body">
-      <p>В ближайшие 5–6 лет <strong>миллионы профессий исчезнут</strong>. Автоматизация и искусственный интеллект переписывают правила экономики. Для многих это означает потерю не только работы — но и смысла.</p>
+      <p>В ближайшие 5–6 лет <strong>сотни профессий исчезнут</strong>. Автоматизация и искусственный интеллект переписывают правила экономики. Для многих это означает потерю не только работы — но и смысла.</p>
       <p>Но это не конец. Это <strong>начало нового вида свободы</strong>. Впервые в истории у людей появится время — и вопрос в том, как его наполнить. Commune.live — ответ на этот вопрос.</p>
-      <p>Мы создаём инфраструктуру для <strong>новой экономики смыслов</strong> — где люди объединяются, творят вместе и монетизируют саму свою жизнь.</p>
+      <p>Мы создаём инфраструктуру для <strong>новой экономики смыслов</strong> — где люди объединяются, творят вместе и монетизируют свою жизнь.</p>
     </div>
   </div>
 
@@ -512,7 +666,7 @@ footer {
     </div>
     <div>
       <div class="mito-quote">
-        «Митохондрии — электростанции наших клеток — когда-то были отдельными бактериями. Они объединились с другим организмом — и это дало начало всей сложной жизни на Земле. Симбиоз — не слабость. Это высшая стратегия эволюции.»
+        «Митохондрии — электростанции наших клеток — когда-то были отдельными бактериями. Они объединились с другим организмом — и это дало начало всей сложной жизни на Земле. Симбиоз и сотрудничество - это высшая стратегия эволюции.»
       </div>
       <div class="mito-source">Миллиарды лет эволюции доказали: вместе — сильнее</div>
     </div>
@@ -530,26 +684,26 @@ footer {
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-year">2024–2025</div>
-        <h3 class="tl-title">ИИ берёт рутину</h3>
+        <h3 class="tl-title">ИИ уберёт рутину</h3>
         <p class="tl-desc">Аналитики, операторы, переводчики, бухгалтеры — автоматизируются первыми. Миллионы ищут себя заново.</p>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-year">2026–2027</div>
         <h3 class="tl-title">Волна переосмысления</h3>
-        <p class="tl-desc">Люди хотят смысла, а не зарплаты. Коммьюнити, творчество и совместная жизнь становятся нормой.</p>
+        <p class="tl-desc">Отказ от старой логики успеха: люди больше не верят в карьерную лестницу как в обязательный маршрут. Появляется новый сценарий жизни: «минимум работы — максимум жизни».</p>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-year">2028–2029</div>
         <h3 class="tl-title">AGI меняет всё</h3>
-        <p class="tl-desc">Если будет достигнут AGI — экономика труда изменится кардинально. Люди ищут новые форматы жизни и дохода.</p>
+        <p class="tl-desc">Если будет достигнут AGI — экономика труда изменится кардинально. Люди ищут новые форматы жизни и реализации.</p>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-year">2030+</div>
         <h3 class="tl-title">Эпоха коммун</h3>
-        <p class="tl-desc">Базовый доход, сокращение рабочей недели, новая экономика смыслов. Commune.live — инфраструктура этой эпохи.</p>
+        <p class="tl-desc">Базовый безусловный доход, сокращение рабочей недели, новая экономика смыслов. Commune.live — инфраструктура новой эпохи.</p>
       </div>
     </div>
   </div>
@@ -565,8 +719,8 @@ footer {
       <div class="aud-num">Аудитория 01</div>
       <span class="aud-emoji">🔥</span>
       <h3 class="aud-title-card">Молодые и креативные</h3>
-      <div class="aud-age-tag">18–30 лет · художники, видеомейкеры, разработчики</div>
-      <p class="aud-desc-card">Горящие глаза и большие идеи — но нет денег на аренду. Мы даём крышу над головой в обмен на твой навык. Живи в Испании. Снимай. Расти.</p>
+      <div class="aud-age-tag">18–35 лет · молодые художники, видеомейкеры, визионеры, мечтатели</div>
+      <p class="aud-desc-card">Горящие глаза и большие идеи — но нет денег на аренду или переезд? Коммуна дает крышу над головой в обмен на твой навык. Живи где хочешь. Расти. Учись новому. Делай мир лучше.</p>
       <div class="aud-example-card">
         «Маша, 23 года. Монтажёр из Екатеринбурга. Приехала в коммуну садоводов в Валенсии — теперь снимает рилсы, живёт бесплатно и строит портфолио.»
       </div>
@@ -576,10 +730,10 @@ footer {
       <div class="aud-num">Аудитория 02</div>
       <span class="aud-emoji">🌸</span>
       <h3 class="aud-title-card">Пожилые и мудрые</h3>
-      <div class="aud-age-tag">60–80 лет · с домом, пенсией и желанием жить</div>
-      <p class="aud-desc-card">Дом есть, деньги есть — но одиноко. Стань основателем коммуны или объединись с такими же. Переедьте к морю. Пеките вместе. Стримьте.</p>
+      <div class="aud-age-tag">50+ лет · с домом, пенсией и желанием жить</div>
+      <p class="aud-desc-card">Дом есть, деньги есть — но одиноко. Стань основателем коммуны или объединись с такими же. Переедьте к морю. Пеките вместе пирожки и выращивайте манго. Живите, а не доживайте.</p>
       <div class="aud-example-card">
-        «Валентина, 68. Собрала четырёх подруг-пенсионерок. Сняли дом в Черногории вскладчину. Канал "Бабушки у моря" — 40 тысяч подписчиков.»
+        «Валентина, 68. Собрала четырёх подруг-пенсионерок. Вместе сняли дом в Таиланде на пол года. Канал "Бабушки у моря" — 40 тысяч подписчиков.»
       </div>
     </div>
 
@@ -587,10 +741,10 @@ footer {
       <div class="aud-num">Аудитория 03</div>
       <span class="aud-emoji">💎</span>
       <h3 class="aud-title-card">Средний класс и выше</h3>
-      <div class="aud-age-tag">30–50 лет · доход $3k–$10k+ · ищет смысл</div>
-      <p class="aud-desc-card">Деньги есть, свобода есть — но скучно и одиноко. Сними виллу на Бали, подбери единомышленников, создай среду вокруг себя и живи жизнью которую всегда хотел.</p>
+      <div class="aud-age-tag">30–50 лет · доход от $1.5k · ищет смысл</div>
+      <p class="aud-desc-card">Деньги есть, свобода есть — но хочется новых смыслов. Создай собственный кластер единомышленников, уникальную среду вокруг себя и живи жизнью которую всегда хотел.</p>
       <div class="aud-example-card">
-        «Дима, 37, ИТ. Снял виллу на Бали за $2k. Подселил трёх креативных. Вместе ведут подкаст о технологиях. Работает удалённо. Живёт по-настоящему.»
+        «Дима и Аня, 40 лет, разработчик и HR в ИТ. Купили виллу на Бали. Собрали мини сообщество свингер-философов и садоводов. Вместе ведут подкаст о технологиях, будущем и гордятся самым красивым садом на острове.»
       </div>
     </div>
 
@@ -600,8 +754,9 @@ footer {
 <!-- HOW IT WORKS -->
 <section class="how-section" id="how">
   <div class="how-inner">
-    <div class="section-tag reveal">Как это работает</div>
+    <div class="section-tag reveal">Как это работает для искателя</div>
     <h2 class="section-title reveal">Четыре шага<br/>до <em>новой жизни</em></h2>
+  
     <div class="how-steps">
       <div class="how-step reveal">
         <div class="step-num">01</div>
@@ -610,18 +765,48 @@ footer {
       </div>
       <div class="how-step reveal">
         <div class="step-num">02</div>
-        <h3 class="step-title">Подай заявку</h3>
-        <p class="step-desc">Ответь на несколько вопросов, покажи портфолио. Основатель увидит тебя и пригласит на видеозвонок.</p>
+        <h3 class="step-title">Зарегистрируйся и подай заявку</h3>
+        <p class="step-desc">Ответь на несколько вопросов, заполни профиль. Основатель увидит тебя и пригласит на видеозвонок.</p>
       </div>
       <div class="how-step reveal">
         <div class="step-num">03</div>
         <h3 class="step-title">Живи и твори</h3>
-        <p class="step-desc">Приедь, влейся в ритм коммуны, используй свой навык. Жильё, питание, интернет — всё включено.</p>
+        <p class="step-desc">Приедь, влейся в ритм коммуны, используй свой навык. Твори. Жильё, питание, интернет — всё включено.</p>
       </div>
       <div class="how-step reveal">
         <div class="step-num">04</div>
-        <h3 class="step-title">Зарабатывай вместе</h3>
-        <p class="step-desc">Стримы, спонсоры, донаты — коммуна монетизирует свою жизнь. Платформа берёт 10% и помогает расти.</p>
+        <h3 class="step-title">Зарабатывай вместе со своей коммуной</h3>
+        <p class="step-desc">Стримы, спонсоры, донаты — коммуна монетизирует свою жизнь создавая помимо материальных благ, онлайн контент. Платформа берёт всего 10% и помогает расти нашей комьюнити.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS FOR CREATERS -->
+<section class="how-section" id="how_create">
+  <div class="how-inner">
+    <div class="section-tag reveal">Как это работает для создателя</div>
+    <h2 class="section-title reveal">Четыре шага<br/>до <em>новой коммуны</em></h2>
+    <div class="how-steps">
+      <div class="how-step reveal">
+        <div class="step-num">01</div>
+        <h3 class="step-title">Зарегистрируйся и создай профиль</h3>
+        <p class="step-desc">Это совершенно бесплатно.</p>
+      </div>
+      <div class="how-step reveal">
+        <div class="step-num">02</div>
+        <h3 class="step-title">Придумай свои правила</h3>
+        <p class="step-desc">--тут вставь текст.</p>
+      </div>
+      <div class="how-step reveal">
+        <div class="step-num">03</div>
+        <h3 class="step-title">Получай заявки от новых членов</h3>
+        <p class="step-desc">--тут вставь текст.</p>
+      </div>
+      <div class="how-step reveal">
+        <div class="step-num">04</div>
+        <h3 class="step-title">Зарабатывай вместе со своей коммуной</h3>
+        <p class="step-desc">Стримы, спонсоры, донаты — коммуна монетизирует свою жизнь создавая помимо материальных благ, онлайн контент. Платформа берёт всего 10% и помогает расти нашей комьюнити.</p>
       </div>
     </div>
   </div>
@@ -650,13 +835,38 @@ footer {
 <!-- CTA -->
 <section class="cta-section" id="join">
   <div class="cta-inner">
-    <h2 class="cta-title">Готов жить<br/><em>по-настоящему?</em></h2>
-    <p class="cta-sub">Оставь email — мы напишем первыми когда откроем ранний доступ. Первые 500 участников получат особый статус основателей.</p>
-    <form class="cta-form" onsubmit="handleSubmit(event)">
-      <input class="cta-input" type="email" placeholder="твой@email.com" required id="email-input" />
+    <h2 class="cta-title">Готов жить<br/><em>по-новому?</em></h2>
+    <p class="cta-sub">Оставь email — чтобы попасть в первые коммуны в Испании, Бали и Черногории. Более 200 человек уже с нами. Первые 500 участников получат бесплатный мини гайд «Как не остаться одному в эпоху ИИ» </p>
+    <form class="cta-form" action="https://formspree.io/f/mrejvzev" method="POST">
+      <input class="cta-input" type="email" name="email" placeholder="твой@email.com" required id="email-input" />
       <button class="cta-submit" type="submit" id="submit-btn">Хочу в коммуну</button>
     </form>
     <div class="cta-note" id="cta-note">Без спама. Только важное.</div>
+  </div>
+</section>
+
+<!-- CREATE COMMUNITY CTA -->
+<section class="cta-section cta-founder-section" id="founders">
+  <div class="cta-inner">
+    <h2 class="cta-title">
+      Хочешь создать<br/>
+      <em>свою собственную коммуну?</em>
+    </h2>
+
+    <p class="cta-sub">
+      Присоединяйся к нашему сообществу в телеграм.
+    </p>
+
+    <a class="cta-submit founder-btn" 
+       href="https://t.me/commune_live" 
+       target="_blank" 
+       rel="noopener">
+      Создать коммуну
+    </a>
+
+    <div class="cta-note">
+      Для тех, кто чувствует новую культуру жизни.
+    </div>
   </div>
 </section>
 
